@@ -6,7 +6,8 @@ clear
 #1.Install Aria2
 #================================
 
-apt-get install aria2
+sudo apt-get install aria2
+sudo cp /etc/apt/sources.list /etc/backupsources.list
 
 echo "++======================Aria2 Installed======================++"
 
@@ -30,13 +31,20 @@ echo "++======================Repo Updated with Ubuntu & Kali sources===========
 #================================
 
 sudo add-apt-repository ppa:apt-fast/stable
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A2166B8DE8BDC3367D1901C11EE2FF37CA8DA16B
-apt-get update
-apt-get install apt-fast
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A2166B8DE8BDC3367D1901C11EE2FF37CA8DA16B
+sudo apt-get update
+sudo apt-get install apt-fast
 
 
 #Remove Ubuntu Repos
-#save the copy of original source list and over write here.
+
+echo "++======================Mesg======================++"
+
+
+sudo rm /etc/apt/sources.list
+sudo cp /etc/backupsources.list /etc/apt/sources.list
+
+
 echo "++======================Mesg======================++"
 
 
@@ -59,9 +67,9 @@ echo "++======================Mesg======================++"
 #5.APTFAST Upgrade & Clean
 #================================
 
-apt-fast upgrade
-apt-fast clean
-apt-fast autoclean
+sudo apt-fast upgrade
+sudo apt-fast clean
+sudo apt-fast autoclean
 
 echo "++======================Mesg======================++"
 
