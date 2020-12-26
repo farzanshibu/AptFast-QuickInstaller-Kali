@@ -5,13 +5,16 @@ clear
 #================================
 #1.Install Aria2
 #================================
+
 apt-get install aria2
+
 echo "++======================Aria2 Installed======================++"
 
 
 #================================
 #2.Add Ubuntu Repo for APTFAST
 #================================
+
 echo "deb http://ppa.launchpad.net/apt-fast/stable/ubuntu bionic main" | sudo tee -a /etc/apt/sources.list            #for APTFAST
 echo "deb-src http://ppa.launchpad.net/apt-fast/stable/ubuntu bionic main" | sudo tee -a /etc/apt/sources.list        #for APTFAST
 
@@ -25,11 +28,12 @@ echo "++======================Repo Updated with Ubuntu & Kali sources===========
 #================================
 #3.Install APT FAST
 #================================
-#sudo add-apt-repository ppa:apt-fast/stable
 
+sudo add-apt-repository ppa:apt-fast/stable
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A2166B8DE8BDC3367D1901C11EE2FF37CA8DA16B
 apt-get update
 apt-get install apt-fast
+
 
 #Remove Ubuntu Repos
 #save the copy of original source list and over write here.
